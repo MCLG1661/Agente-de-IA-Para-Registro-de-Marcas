@@ -46,3 +46,9 @@ Este projeto é construído exclusivamente com tecnologias front-end:
 ├── style.css       # Folha de estilos para a aplicação
 ├── script.js       # Lógica principal da aplicação em JavaScript
 └── data.js         # Arquivo com os dados das classes de Nice
+
+## 👤 Autor
+Marcus Guedes
+GitHub: https://github.com/MCLG1661
+LinkedIn: https://www.linkedin.com/in/marcusguedes
+
