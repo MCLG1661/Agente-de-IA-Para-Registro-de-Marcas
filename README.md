@@ -1,10 +1,5 @@
 # Agente IA para Registro de Marcas
 
-<p align="center">
-  <b>🅂🄰🄼🄰🅁🅃🄰</b><br>
-  <small>HTML to PDF Converter</small>
-</p>
-
 **SAMARTA (Sistema Avançado de Marcas Assistido Por Redes de Tecnologia Artificial)** é uma aplicação web front-end que simula uma ferramenta inteligente para análise de viabilidade de registro de marcas. O sistema permite que os usuários verifiquem o nome de uma marca em potencial, identifiquem possíveis conflitos e recebam recomendações estratégicas, tudo em uma interface intuitiva e organizada por planos de serviço.
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
