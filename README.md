@@ -5,8 +5,8 @@
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![npm](https://img.shields.io/npm/v/html2canvas)
-![npm](https://img.shields.io/npm/v/jspdf)
+![htm12canvas](https://img.shields.io/npm/v/html2canvas)
+![jsPDF](https://img.shields.io/npm/v/jspdf)
 ![Google Code Assist](https://img.shields.io/badge/Google%20Code%20Assist-4285F4?style=for-the-badge&logo=google&logoColor=white)
 
 
