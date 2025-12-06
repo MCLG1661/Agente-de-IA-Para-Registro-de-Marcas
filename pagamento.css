@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    padding: 30px 40px;
+    box-sizing: border-box;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 20px;
+}
+
+header h1 {
+    color: #1a237e;
+    margin: 0;
+}
+
+header p {
+    color: #555;
+    font-size: 1rem;
+}
+
+.plan-summary {
+    margin-bottom: 30px;
+}
+
+.plan-summary h2, .payment-form h2 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #1a237e;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.payment-methods {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.payment-method-label {
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #555;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.payment-method-label.active {
+    color: #1a237e;
+    border-bottom-color: #1a237e;
+    font-weight: 700;
+}
+
+.payment-content {
+    display: none;
+}
+
+.payment-content.active {
+    display: block;
+}
+
+.pix-container {
+    text-align: center;
+}
+
+.pix-qrcode {
+    max-width: 200px;
+    margin: 10px auto;
+}
+
+.plan-details, .plan-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    padding: 10px 0;
+}
+
+.plan-details strong, .plan-price strong {
+    color: #1a237e;
+    font-weight: 700;
+}
+
+.payment-form input, .payment-form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+.card-details {
+    display: flex;
+    gap: 15px;
+}
+
+.card-details input {
+    flex: 1;
+}
+
+#confirm-action-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#confirm-action-btn:hover {
+    background-color: #218838;
+}
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #1a237e;
+    text-decoration: none;
+    font-weight: 500;
+}

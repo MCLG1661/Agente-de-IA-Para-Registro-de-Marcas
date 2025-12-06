@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento - SAMARTA</title>
+    <link rel="stylesheet" href="pagamento.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Finalize sua Assinatura</h1>
+            <p>Você está a um passo de proteger sua marca com o melhor da tecnologia.</p>
+        </header>
+
+        <main>
+            <div class="plan-summary">
+                <h2>Resumo do Pedido</h2>
+                <div class="plan-details">
+                    <span>Plano</span>
+                    <strong id="plan-name">Carregando...</strong>
+                </div>
+                <div class="plan-price">
+                    <span>Valor Mensal</span>
+                    <strong id="plan-price">R$ 0,00</strong>
+                </div>
+            </div>
+
+            <div class="payment-form">
+                <h2>Dados de Pagamento</h2>
+                <div class="payment-methods">
+                    <label for="method-cc" class="payment-method-label active">Cartão de Crédito</label>
+                    <label for="method-pix" class="payment-method-label">Pix</label>
+                    <label for="method-boleto" class="payment-method-label">Boleto</label>
+                </div>
+
+                <div id="credit-card-content" class="payment-content active">
+                    <input type="text" placeholder="Nome no Cartão" required>
+                    <input type="text" placeholder="Número do Cartão" required>
+                    <div class="card-details">
+                        <input type="text" placeholder="Validade (MM/AA)" required>
+                        <input type="text" placeholder="CVC" required>
+                    </div>
+                    <select id="installments" required>
+                        <option value="1">1x de R$ 99,90</option>
+                        <!-- Opções de parcelamento serão adicionadas via JS -->
+                    </select>
+                </div>
+
+                <div id="pix-content" class="payment-content">
+                    <p>Para pagar com Pix, escaneie o QR Code abaixo com o app do seu banco ou copie o código.</p>
+                    <div class="pix-container">
+                        <img src="https://via.placeholder.com/200x200.png?text=QR+Code+PIX" alt="QR Code para pagamento Pix" class="pix-qrcode">
+                        <button class="btn-secondary">Copiar Código Pix</button>
+                    </div>
+                </div>
+
+                <div id="boleto-content" class="payment-content">
+                    <p>O boleto bancário será gerado com vencimento para 2 dias úteis. Você poderá pagar em qualquer banco, casa lotérica ou via internet banking.</p>
+                    <p><strong>A confirmação pode levar até 3 dias úteis.</strong></p>
+                </div>
+
+                <button id="confirm-action-btn">Pagar com Cartão</button>
+            </div>
+            <a href="index.html" class="back-link">Voltar para o sistema</a>
+        </main>
+    </div>
+    <script src="pagamento.js"></script>
+</body>
+</html>

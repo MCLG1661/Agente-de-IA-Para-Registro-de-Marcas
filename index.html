@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agente IA - Registro de Marcas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app-container" class="container plan-basico">
+        <header>
+            <h1>Sistema Avançado de Marcas Assistido Por Redes de Tecnologia Artificial</h1>
+            <p class="subtitle">SAMARTA - A Inteligência Que Protege A Sua Marca</p>
+            <div class="plan-indicator">
+                <span>Seu Plano:</span>
+                <span id="planName" class="plan-name">Básico</span>
+            </div>
+            <div class="plan-management">
+                <span>Gerenciar Plano:</span>
+                <button id="planBtn-Básico" class="btn-secondary">Básico</button>
+                <button id="planBtn-Profissional" class="btn-secondary">Profissional</button>
+                <button id="planBtn-Premium">Premium</button>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="input-section">
+                <h2>Análise de Viabilidade</h2>
+                <div class="input-group">
+                    <input type="text" id="marcaInput" placeholder="Digite o nome da marca para análise..." />
+                    <select id="classeSelect">
+                        <option value="">Selecione a classe de produtos/serviços...</option>
+                    </select>
+                    <button onclick="analisarMarca()">Analisar</button>
+                    <button onclick="limparPesquisa()" class="btn-secondary">Limpar</button>
+                </div>
+            </div>
+
+            <div class="results-section">
+                <div id="loading" class="hidden">
+                    <div class="spinner"></div>
+                    <p>Analisando marca e consultando bancos de dados...</p>
+                </div>
+
+                <div id="resultado" class="hidden">
+                    <div class="result-header">
+                        <h3>Resultado da Análise: <span id="nomeMarca"></span></h3>
+                        <div class="header-controls">
+                            <div class="risk-badge" id="riskBadge"></div>
+                            <button onclick="exportarPDF()" class="btn-export">Exportar PDF</button>
+                        </div>
+                    </div>
+                    
+                    <div class="result-details">
+                        <div class="conflicts-section">
+                            <h4>🚨 Conflitos Identificados</h4>
+                            <div id="conflitosList"></div>
+                        </div>
+                        
+                        <div class="suggestions-section">
+                            <h4>💡 Recomendações</h4>
+                            <div id="sugestoesList"></div>
+                        </div>
+                        
+                        <div class="next-steps">
+                            <h4>📋 Próximos Passos</h4>
+                            <div id="proximosPassos"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features-section">
+                <h2>Funcionalidades do Agente</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🔍</div>
+                        <h3>Busca Inteligente</h3>
+                        <p>Análise em bancos de dados nacionais e internacionais</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚖️</div>
+                        <h3>Análise de Similaridade</h3>
+                        <p>Detecção de conflitos fonéticos e semânticos</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Relatório de Viabilidade</h3>
+                        <p>Classificação de risco e fundamentação jurídica</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⏰</div>
+                        <h3>Gestão de Prazos</h3>
+                        <p>Alertas inteligentes para renovações e respostas</p>
+                    </div>
+                    <div class="feature-card profissional-feature">
+                        <div class="feature-icon">🔗</div>
+                        <h3>Conexão Direta INPI</h3>
+                        <p>Busca em tempo real na base de dados oficial do INPI.</p>
+                        <div class="profissional-badge"><span>🔒</span> Profissional</div>
+                    </div>
+                    <div class="feature-card profissional-feature">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>Monitoramento Contínuo</h3>
+                        <p>Seja notificado sobre novas marcas conflitantes publicadas.</p>
+                        <div class="profissional-badge"><span>🔒</span> Profissional</div>
+                    </div>
+                    <div class="feature-card premium-feature">
+                        <div class="feature-icon">📜</div>
+                        <h3>Relatórios Jurídicos</h3>
+                        <p>Gere pareceres com fundamentação jurídica para decisões estratégicas.</p>
+                        <div class="premium-badge"><span>🔒</span> Premium</div>
+                    </div>
+                    <div class="feature-card premium-feature">
+                        <div class="feature-icon">🔌</div>
+                        <h3>Integração via API</h3>
+                        <p>Conecte o poder do agente aos seus próprios sistemas.</p>
+                        <div class="premium-badge"><span>🔒</span> Premium</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
