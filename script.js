@@ -80,7 +80,6 @@ function populateClassSelect() {
 }
 
 // Funções existentes (simuladas, já que o arquivo original não foi fornecido)
-
 function analisarMarca() {
     const marcaInput = document.getElementById('marcaInput');
     if (!marcaInput.value) {
@@ -98,12 +97,70 @@ function analisarMarca() {
 
     console.log(`Analisando a marca: ${marcaInput.value} com o plano ${currentPlan}`);
     // Lógica de análise...
+    document.getElementById('resultado').classList.add('hidden');
     document.getElementById('loading').classList.remove('hidden');
+    
     setTimeout(() => {
         document.getElementById('loading').classList.add('hidden');
         document.getElementById('resultado').classList.remove('hidden');
         document.getElementById('nomeMarca').textContent = marcaInput.value;
-        // Preencher resultados...
+        
+        // Simulação de Resultados
+        const riscos = ['low', 'medium', 'high'];
+        // Peso aleatório para o risco
+        const riscoAleatorio = riscos[Math.floor(Math.random() * riscos.length)];
+        
+        const badge = document.getElementById('riskBadge');
+        const conflitosList = document.getElementById('conflitosList');
+        const sugestoesList = document.getElementById('sugestoesList');
+        const proximosPassos = document.getElementById('proximosPassos');
+
+        // Limpar listas anteriores
+        conflitosList.innerHTML = '';
+        sugestoesList.innerHTML = '';
+        proximosPassos.innerHTML = '';
+
+        let dadosResultado;
+
+        if (riscoAleatorio === 'high') {
+            badge.className = 'risk-badge risk-high';
+            badge.textContent = 'Risco Alto';
+            dadosResultado = {
+                conflitos: ['Marca foneticamente idêntica encontrada na classe selecionada.', 'Termo descritivo de uso comum.'],
+                sugestoes: ['Considere alterar o nome da marca.', 'Adicione um elemento figurativo distintivo.'],
+                passos: ['Consultar um advogado especializado.', 'Realizar busca aprofundada de anterioridade.']
+            };
+        } else if (riscoAleatorio === 'medium') {
+            badge.className = 'risk-badge risk-medium';
+            badge.textContent = 'Risco Moderado';
+            dadosResultado = {
+                conflitos: ['Marcas com radical similar em classes correlatas.', 'Possível oposição de terceiros.'],
+                sugestoes: ['Monitorar o processo semanalmente.', 'Registrar também a forma mista (logo).'],
+                passos: ['Preparar documentação para depósito.', 'Aguardar prazo de oposição.']
+            };
+        } else {
+            badge.className = 'risk-badge risk-low';
+            badge.textContent = 'Risco Baixo';
+            dadosResultado = {
+                conflitos: ['Nenhum conflito direto encontrado na base do INPI.'],
+                sugestoes: ['Iniciar o processo de registro imediatamente.', 'Garantir domínios de internet (.com.br).'],
+                passos: ['Protocolar pedido no INPI.', 'Pagar a GRU inicial.']
+            };
+        }
+
+        // Preencher HTML
+        const createListItems = (items, container) => {
+            items.forEach(item => {
+                const p = document.createElement('p');
+                p.textContent = `• ${item}`;
+                container.appendChild(p);
+            });
+        };
+
+        createListItems(dadosResultado.conflitos, conflitosList);
+        createListItems(dadosResultado.sugestoes, sugestoesList);
+        createListItems(dadosResultado.passos, proximosPassos);
+
     }, 2000);
 }
 
@@ -119,9 +176,25 @@ function exportarPDF() {
         alert('A exportação de PDF é uma funcionalidade do plano Premium. Por favor, faça o upgrade.');
         return;
     }
-    console.log('Exportando PDF...');
-    // Lógica de exportação...
-    alert('Relatório exportado com sucesso (simulação).');
+    
+    const elemento = document.getElementById('resultado');
+    const nomeMarca = document.getElementById('nomeMarca').textContent || 'Relatorio';
+
+    if (window.jspdf && window.html2canvas) {
+        window.html2canvas(elemento).then(canvas => {
+            const imgData = canvas.toDataURL('image/png');
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const imgProps = doc.getImageProperties(imgData);
+            const pdfWidth = doc.internal.pageSize.getWidth();
+            const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+            
+            doc.addImage(imgData, 'PNG', 0, 10, pdfWidth, pdfHeight);
+            doc.save(`Analise_Marca_${nomeMarca}.pdf`);
+        });
+    } else {
+        alert('Erro ao carregar bibliotecas de PDF.');
+    }
 }
 
 /**
