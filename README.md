@@ -5,7 +5,7 @@
 ![HTML5](https://img.shields.io/badge/HTML5-Frontend-E34F26?logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-Responsive-1572B6?logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript&logoColor=black)
-![jsPDF](https://img.shields.io/badge/jsPDF-PDF%20Export-red)
+![jsPDF](https://img.shields.io/badge/jsPDF-PDF%20Export-red) 
 ![SaaS](https://img.shields.io/badge/Product-SaaS-7952B3)
 ![Vercel](https://img.shields.io/badge/Deploy-Vercel-000000?logo=vercel)
 ![Status](https://img.shields.io/badge/Status-Protótipo-blue)
