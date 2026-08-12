@@ -103,16 +103,16 @@ O relatório pode ser exportado em PDF utilizando **jsPDF** e **html2canvas**.
 O projeto também explora conceitualmente uma estratégia de produto baseada em 
 diferentes níveis de serviço.
 
-Básico
+**Básico**
 
 Experiência inicial de análise e geração de relatório.
 
-Profissional
+**Profissional**
 
 Conceito de funcionalidades adicionais, como integração com fontes externas e 
 monitoramento.
 
-Premium
+**Premium**
 
 Conceito de funcionalidades avançadas e integrações.
 
