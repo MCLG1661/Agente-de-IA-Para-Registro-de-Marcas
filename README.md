@@ -181,12 +181,18 @@ Exportação PDF
 
 ## 🛠️ Tecnologias
 
-**HTML5** - Estrutura da interface 
+**HTML5** - Estrutura da interface
+
 **CSS3** - Design e responsividade 
+
 **JavaScript** - Lógica e interatividade
+
 **data.js** - Dados utilizados na simulação
+
 **jsPDF** - Geração do relatório em PDF
+
 **html2canvas** - Captura da interface para exportação
+
 **Vercel** - Deploy da aplicação
 
 ---
