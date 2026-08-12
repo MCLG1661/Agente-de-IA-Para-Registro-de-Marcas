@@ -28,7 +28,13 @@ com diferentes planos e funcionalidades.
 
 ## 🌐 Aplicação Online
 
-https://agente-especialista-em-registro-de.vercel.app
+**[Acesse o SMART](https://agente-especialista-em-registro-de.vercel.app/)**
+
+A versão demonstrativa do SMART está publicada na **Vercel** e pode ser acessada diretamente pelo navegador.
+
+> ⚠️ A aplicação é um protótipo demonstrativo. As análises, consultas e recomendações apresentadas são simuladas e não substituem pesquisas oficiais ou análise profissional.
+
+--- 
 
 
 
