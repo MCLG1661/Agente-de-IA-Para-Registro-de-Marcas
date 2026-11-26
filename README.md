@@ -194,19 +194,19 @@ A aplicação trabalha com três classificações demonstrativas.
 
 ### 🟢 Baixo
 
-A simulação não identifica conflito relevante dentro da lógica demonstrativa.
+O hash gera uma classificação ilustrativa baixa, sem pesquisar conflitos reais.
 
 O sistema ainda recomenda pesquisa oficial antes de qualquer decisão.
 
 ### 🟡 Moderado
 
-A simulação identifica características que justificariam análise complementar.
+O hash gera uma classificação ilustrativa moderada, sem avaliar características reais.
 
 O usuário recebe recomendações para aprofundar a pesquisa.
 
 ### 🔴 Alto
 
-A simulação identifica alto nível de similaridade dentro da base demonstrativa.
+O hash gera uma classificação ilustrativa alta, sem medir similaridade ou consultar uma base de marcas.
 
 A interface recomenda análise mais detalhada antes de qualquer decisão sobre registro.
 
@@ -308,7 +308,7 @@ Todos possuem finalidade exclusivamente demonstrativa.
 
 Simula:
 
-- dados do cartão;
+- campos ilustrativos de cartão, desativados;
 - parcelamento;
 - confirmação da contratação.
 

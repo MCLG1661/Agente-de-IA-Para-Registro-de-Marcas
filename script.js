@@ -11,6 +11,7 @@
 
 const plans = ["Básico", "Profissional", "Premium"];
 
+let pendingAnalysis = null;
 const savedPlan = localStorage.getItem("smart-demo-plan");
 
 let currentPlan = savedPlan && plans.includes(savedPlan)
@@ -68,6 +69,7 @@ function changePlan(newPlan) {
     }
 
     currentPlan = newPlan;
+    localStorage.setItem("smart-demo-plan", newPlan);
 
     console.log(`Plano demonstrativo selecionado: ${currentPlan}`);
 
@@ -208,7 +210,9 @@ function analisarMarca() {
         `Executando análise demonstrativa da marca "${nomeMarca}" na classe ${classe}.`
     );
 
-    setTimeout(() => {
+    clearTimeout(pendingAnalysis);
+    pendingAnalysis = setTimeout(() => {
+        pendingAnalysis = null;
         loading.classList.add("hidden");
 
         executarAnaliseDemonstrativa(
@@ -253,8 +257,8 @@ function executarAnaliseDemonstrativa(nomeMarca, classe) {
 
         dadosResultado = {
             conflitos: [
-                "A simulação identificou alto nível de similaridade na base demonstrativa.",
-                "O nome apresenta características que justificariam uma pesquisa de anterioridade mais detalhada."
+                "O hash gerou uma classificação ilustrativa alta; nenhuma base de marcas foi consultada.",
+                "A classificação não avalia características reais do nome."
             ],
 
             sugestoes: [
@@ -274,8 +278,8 @@ function executarAnaliseDemonstrativa(nomeMarca, classe) {
 
         dadosResultado = {
             conflitos: [
-                "A simulação identificou elementos potencialmente semelhantes na base demonstrativa.",
-                "O resultado indica necessidade de análise complementar."
+                "O hash gerou uma classificação ilustrativa moderada; nenhuma similaridade foi medida.",
+                "O resultado não permite concluir sobre a disponibilidade da marca."
             ],
 
             sugestoes: [
@@ -295,7 +299,7 @@ function executarAnaliseDemonstrativa(nomeMarca, classe) {
 
         dadosResultado = {
             conflitos: [
-                "A simulação não identificou conflito relevante na base demonstrativa."
+                "O hash gerou uma classificação ilustrativa baixa; conflitos reais não foram pesquisados."
             ],
 
             sugestoes: [
@@ -347,6 +351,8 @@ function preencherLista(items, container) {
 // ----------------------------------------------------------
 
 function limparPesquisa() {
+    clearTimeout(pendingAnalysis);
+    pendingAnalysis = null;
     const marcaInput = document.getElementById("marcaInput");
     const classeSelect = document.getElementById("classeSelect");
     const resultado = document.getElementById("resultado");
