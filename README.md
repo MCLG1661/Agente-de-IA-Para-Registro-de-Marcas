@@ -10,6 +10,10 @@
 ![UX](https://img.shields.io/badge/UX-Product%20Experience-FF69B4)
 ![Status](https://img.shields.io/badge/Status-Prototype-orange)
 
+### English overview
+
+SMART is a demonstrative SaaS prototype for exploring the early stages of trademark analysis. It presents illustrative risk scoring, Nice Classification exploration, and a simulated service journey.
+
 ---
 
 ## 📌 Sobre o Projeto
